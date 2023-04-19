@@ -1,7 +1,9 @@
 # Misc
 .DS_Store
 .env.local
-summarize-video_to_text/.idea/
+.idea/
+credentials.json
+./session-formatter/.mypy_cache
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
