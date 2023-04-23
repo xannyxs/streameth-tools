@@ -1,7 +1,6 @@
 import os
 import sys
 import mimetypes
-import datetime
 from os.path import join, dirname, basename, isfile, isdir
 from LivePeerSDK_Python.LivePeerSDK import LivePeerSDK
 from dotenv import load_dotenv
