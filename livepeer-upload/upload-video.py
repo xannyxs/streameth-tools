@@ -7,7 +7,7 @@ from LivePeerSDK_Python.LivePeerSDK import LivePeerSDK
 from dotenv import load_dotenv
 
 
-def upload_video(LivePeer: LivePeerSDK, video_path: str):
+def upload_video(LivePeer: LivePeerSDK, video_path: str) -> None:
     """Uploads a video to LivePeer."""
 
     print(f"Uploading... {basename(video_path)}")
@@ -16,14 +16,14 @@ def upload_video(LivePeer: LivePeerSDK, video_path: str):
     LivePeer.uploadContent(video_path, assetUrl['url'])
 
 
-def upload_videos(LivePeer: LivePeerSDK, videos: list):
+def upload_videos(LivePeer: LivePeerSDK, videos: list[str]) -> None:
     """Uploads a list of videos to LivePeer."""
 
     for video_path in videos:
         upload_video(LivePeer, video_path)
 
 
-def get_video_names_from_directory(directory_path: str) -> list:
+def get_video_names_from_directory(directory_path: str) -> list[str]:
     """Returns a list of video file paths in the provided directory."""
 
     video_paths = []
@@ -43,7 +43,7 @@ def is_video(file_path: str) -> bool:
     return mime_type is not None and mime_type.startswith('video')
 
 
-def get_video() -> list:
+def get_video() -> list[str]:
     """Retrieves the video(s) from the provided path."""
 
     input_path = sys.argv[1]
@@ -71,7 +71,7 @@ def get_video() -> list:
         sys.exit(1)
 
 
-def main():
+def main() -> None:
     if len(sys.argv) != 2:
         print("Usage: python3 upload-video.py /path/to/directory_or_video")
         sys.exit(1)
