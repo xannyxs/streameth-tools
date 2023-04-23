@@ -3,7 +3,7 @@ import subprocess
 import whisper
 
 
-def download_m3u8_video_as_wav(m3u8_url, output_wav):
+def download_m3u8_video_as_wav(m3u8_url: str, output_wav: str) -> None:
     command = [
         "ffmpeg",
         "-i", m3u8_url,
@@ -21,7 +21,7 @@ def download_m3u8_video_as_wav(m3u8_url, output_wav):
         print(f"Error occurred while downloading and converting audio from {m3u8_url} to {output_wav}: {e}")
 
 
-def convert_speech_to_text(output_wav):
+def convert_speech_to_text(output_wav: str) -> None:
     model = whisper.load_model("base")
     result = model.transcribe(output_wav)
     text = result["text"]
@@ -32,7 +32,7 @@ def convert_speech_to_text(output_wav):
     print(f"Successfully saved speech-to-text result")
 
 
-if __name__ == "__main__":
+def main() -> None:
     parser = argparse.ArgumentParser(
         description="Download audio from an M3U8 URL and save it as a WAV file using ffmpeg")
     parser.add_argument("m3u8_url", help="URL of the M3U8 file")
@@ -42,3 +42,7 @@ if __name__ == "__main__":
 
     download_m3u8_video_as_wav(args.m3u8_url, args.output_wav)
     convert_speech_to_text(args.output_wav)
+
+
+if __name__ == "__main__":
+    main()
