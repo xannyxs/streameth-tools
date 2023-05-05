@@ -2,6 +2,7 @@ import argparse
 import os
 import subprocess
 import sys
+from typing import Any
 import whisper
 import openai
 from os.path import dirname, join
@@ -63,7 +64,7 @@ def download_m3u8_video_as_wav(m3u8_url: str, output_name: str) -> None:
         print(f"Error occurred while downloading and converting audio from {m3u8_url} to {output_name}.wav: {e}")
 
 
-def convert_speech_to_text(input_wav: str) -> str:
+def convert_speech_to_text(input_wav: str) -> Any:
     model = whisper.load_model("base")
     result = model.transcribe(input_wav)
     text = result["text"]

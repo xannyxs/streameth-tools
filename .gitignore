@@ -3,7 +3,7 @@
 .env.local
 .idea/
 credentials.json
-./session-formatter/.mypy_cache
+.mypy_cache
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
