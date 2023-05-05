@@ -8,7 +8,8 @@ import openai
 from os.path import dirname, join
 from dotenv import load_dotenv
 
-
+# Will change this in the future.
+# Thinking of splitting the file
 def process_text_file(transcribed_text: str) -> str:
     content = transcribed_text.replace('um', '').replace('uh', '').replace(',', '').replace('  ', ' ')
 
