@@ -22,7 +22,7 @@ def process_json_file(json_file_path: str) -> None:
         if 'video' not in session_data:
             print('Video does not exist in file')
             return
-        elif 'gpt-description' in session_data:
+        elif 'gpt_description' in session_data:
             print('Description has already been made')
             return
 
